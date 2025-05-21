@@ -5,6 +5,8 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
+import * as $ciudad_Leonida from "./routes/ciudad/Leonida.tsx";
+import * as $ciudad_name_ from "./routes/ciudad/[name].tsx";
 import * as $favoritos from "./routes/favoritos.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $personajes from "./routes/personajes.tsx";
@@ -23,6 +25,8 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
+    "./routes/ciudad/Leonida.tsx": $ciudad_Leonida,
+    "./routes/ciudad/[name].tsx": $ciudad_name_,
     "./routes/favoritos.tsx": $favoritos,
     "./routes/index.tsx": $index,
     "./routes/personajes.tsx": $personajes,

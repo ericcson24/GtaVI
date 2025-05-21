@@ -1,10 +1,10 @@
 import { PageProps } from "$fresh/server.ts";
-import WeatherWidget from "../components/WeatherWidget.tsx";
+
 import Header from "../islands/Header.tsx";
 import { Weather } from "../utils/types.ts";
 
 export default function Layout(props: PageProps<Weather | null>) {
-  const clima = props.data;
+ 
   const Component = props.Component;
 
   return (

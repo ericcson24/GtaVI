@@ -12,7 +12,6 @@ import AgregarAFavoritos from "../islands/AgregarAFavoritos.tsx";
 
 import FavoritoButton from "../islands/FavoritoButton.tsx";
 
-import GaleriaPersonaje from "../islands/GaleriaPersonaje.tsx";
 
 
 export const handler: Handlers = {

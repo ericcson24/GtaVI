@@ -73,8 +73,8 @@ export default function Header() {
       {menuAbierto && (
         <div class="menu-ciudades">
           <ul>
-            <li><a href="/ciudad/miami">🌴 Miami</a></li>
-            <li><a href="/ciudad/leonida">🌆 Leonida</a></li>
+            
+            <li><a href="/ciudad/leonida">🌆 Leonida Keys</a></li>
             <li><a href="/ciudad/vice">🌃 Vice City</a></li>
           </ul>
         </div>

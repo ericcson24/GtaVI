@@ -1,34 +1,44 @@
-import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
-import initMongodb from "../utils/database.ts";
-import { Personaje } from "../utils/types.ts";
-import PersonajeComponent from "../components/PersonajeComponent.tsx";
+import { Handlers, PageProps } from "$fresh/server.ts";
+import initCiudadesDB from "../utils/databaseCiudades.ts";
+import { CiudadModel } from "../utils/types.ts";
+import { ciudadesValidas } from "../utils/ciudadesValidas.ts";
 
-export const handler: Handlers = {
-  GET: async (_req: Request, ctx: FreshContext<unknown, Personaje[]>) => {
-    const db = await initMongodb();
-    const result = await db.find().toArray();
-
-    // Adaptar al tipo del front
-    const personajes: Personaje[] = result.map((doc) => ({
-      nombre: doc.name,
-      imagen: doc.image,
-      descripcion: doc.description,
-      juego: doc.game,
-    }));
-
-    return ctx.render(personajes);
+// 💡 Esto recupera las ciudades favoritas desde MongoDB
+export const handler: Handlers<CiudadModel[]> = {
+  async GET(_req, ctx) {
+    const db = await initCiudadesDB();
+    const ciudades = await db.find().toArray();
+    return ctx.render(ciudades);
   },
 };
 
-export default function FavoritosPage({ data }: PageProps<Personaje[]>) {
+// 💡 Esto renderiza la página
+export default function FavoritosPage({ data }: PageProps<CiudadModel[]>) {
+  const ciudades = data ?? [];
+
   return (
-    <div class="personaje-almacen">
-      <h1 class="text-3xl font-bold mb-4"> Personajes Favoritos</h1>
-      <div class="list-pokemon">
-        {data.length > 0 ? (
-          data.map((p) => <PersonajeComponent key={p.nombre} {...p} />)
+    <div class="favoritos-ciudades-container">
+      <h1 class="titulo-favoritos">Ciudades Favoritas</h1>
+      <div class="panel-ciudades-favoritas">
+        {ciudades.length > 0 ? (
+          ciudades.map((ciudad) => {
+            const ciudadValida = ciudadesValidas.find(
+              (c) => c.nombre.toLowerCase() === ciudad.nombre.toLowerCase()
+            );
+            const ruta = ciudadValida ? ciudadValida.ruta : ciudad.nombre.toLowerCase();
+
+            return (
+              <a
+                href={`/ciudad/${ruta}`}
+                class="ciudad-favorita"
+                style={{ backgroundImage: `url(${ciudad.imagen})` }}
+              >
+                <span class="nombre-ciudad">{ciudad.nombre}</span>
+              </a>
+            );
+          })
         ) : (
-          <p>No hay personajes aún. ¡Agrega alguno!</p>
+          <p>No hay ciudades aún. ¡Agrega alguna!</p>
         )}
       </div>
     </div>

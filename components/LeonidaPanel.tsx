@@ -1,3 +1,5 @@
+import FavoritoCiudadButton from "../islands/FavoritoCiudadButton.tsx";
+
 export default function LeonidaPanel() {
   return (
     <div class="leonida-container">
@@ -8,13 +10,16 @@ export default function LeonidaPanel() {
 
       {/* Texto descriptivo */}
       <div class="leonida-texto">
-        <h1>LA PUERTA AL PARAÍSO</h1>
+        <h1>LEONIDA KEYS</h1>
         <p class="subtitulo">EL CÓDIGO DE VESTIMENTA ES INFORMAL Y LOS BARES ESTÁN REPLETOS.</p>
         <p>
           La vida en este archipiélago tropical no es ostentosa, pero sí tranquila. Recuéstate sobre
           una tumbona con una copa de más, pero fíjate bien: te encuentras a las puertas de las
           aguas más hermosas y peligrosas de toda América.
         </p>
+
+        {/* Botón para agregar ciudad a favoritos */}
+        <FavoritoCiudadButton nombre="Leonida" imagen="/leonida-postal.jpg" />
       </div>
 
       {/* Galería lateral */}

@@ -4,11 +4,11 @@ import { favoritos } from "../utils/favoritos.ts";
 import { personajesValidos } from "../utils/personajes.ts";
 
 const AgregarAFavoritos: FunctionalComponent = () => {
-  const [auxiliar, setAuxiliar] = useState<string>("");
+  const [personajeSeleccionado, setPersonajeSeleccionado] = useState<string>("");
   const [mensajeError, setMensajeError] = useState<string>("");
 
   const agregar = () => {
-    const nombre = auxiliar.trim();
+    const nombre = personajeSeleccionado.trim();
     const personaje = personajesValidos.find(
       (p) => p.nombre.toLowerCase() === nombre.toLowerCase()
     );
@@ -24,20 +24,27 @@ const AgregarAFavoritos: FunctionalComponent = () => {
     }
 
     favoritos.value = [...favoritos.value, personaje];
-    setAuxiliar("");
+    setPersonajeSeleccionado("");
     setMensajeError("");
   };
 
   return (
     <div class="formulario-agregar">
       <div class="formulario-campo">
-        <input
-          class="input-personaje"
-          type="text"
-          placeholder="Introduce tu personaje"
-          value={auxiliar}
-          onInput={(e) => setAuxiliar(e.currentTarget.value)}
-        />
+        <label for="personaje-select" class="sr-only">Selecciona un personaje:</label>
+        <select
+          id="personaje-select"
+          class="select-personaje"
+          value={personajeSeleccionado}
+          onChange={(e) => setPersonajeSeleccionado(e.currentTarget.value)}
+        >
+          <option value="" disabled hidden>-- Elige un personaje --</option>
+          {personajesValidos.map((p) => (
+            <option key={p.nombre} value={p.nombre}>
+              {p.nombre}
+            </option>
+          ))}
+        </select>
         <button class="boton-agregar" type="button" onClick={agregar}>
           Agregar
         </button>

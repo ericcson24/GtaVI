@@ -32,3 +32,8 @@ export interface Persona {
 }
 
 
+export interface CiudadModel {
+  nombre: string;
+  imagen: string;
+}
+

@@ -5,8 +5,10 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
+import * as $api_ciudades from "./routes/api/ciudades.ts";
 import * as $ciudad_Leonida from "./routes/ciudad/Leonida.tsx";
 import * as $ciudad_name_ from "./routes/ciudad/[name].tsx";
+import * as $ciudad_vice from "./routes/ciudad/vice.tsx";
 import * as $favoritos from "./routes/favoritos.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $personajes from "./routes/personajes.tsx";
@@ -14,6 +16,7 @@ import * as $weather from "./routes/weather.tsx";
 import * as $AgregarAFavoritos from "./islands/AgregarAFavoritos.tsx";
 import * as $ClimaPanel from "./islands/ClimaPanel.tsx";
 import * as $FavoritoButton from "./islands/FavoritoButton.tsx";
+import * as $FavoritoCiudadButton from "./islands/FavoritoCiudadButton.tsx";
 import * as $GaleriaPersonaje from "./islands/GaleriaPersonaje.tsx";
 import * as $Header from "./islands/Header.tsx";
 import * as $ListaFavoritos from "./islands/ListaFavoritos.tsx";
@@ -25,8 +28,10 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
+    "./routes/api/ciudades.ts": $api_ciudades,
     "./routes/ciudad/Leonida.tsx": $ciudad_Leonida,
     "./routes/ciudad/[name].tsx": $ciudad_name_,
+    "./routes/ciudad/vice.tsx": $ciudad_vice,
     "./routes/favoritos.tsx": $favoritos,
     "./routes/index.tsx": $index,
     "./routes/personajes.tsx": $personajes,
@@ -36,6 +41,7 @@ const manifest = {
     "./islands/AgregarAFavoritos.tsx": $AgregarAFavoritos,
     "./islands/ClimaPanel.tsx": $ClimaPanel,
     "./islands/FavoritoButton.tsx": $FavoritoButton,
+    "./islands/FavoritoCiudadButton.tsx": $FavoritoCiudadButton,
     "./islands/GaleriaPersonaje.tsx": $GaleriaPersonaje,
     "./islands/Header.tsx": $Header,
     "./islands/ListaFavoritos.tsx": $ListaFavoritos,

@@ -57,7 +57,10 @@ export default function Home({ data }: PageProps<Weather | undefined>) {
         <h2>Clima actual en Leonida</h2>
         <ClimaPanel clima={data} />
       </section>
-
+      <section >
+      <img class ="artwork2" src="/Vice_City_01.jpg" alt="GTA VI" />
+  
+      </section>
 
       <section class="peronajes-lista">
 
@@ -110,6 +113,11 @@ export default function Home({ data }: PageProps<Weather | undefined>) {
 </section>
 
 
+<section >
+  <img class ="artwork2" src="/Jason_and_Lucia_Motel_ultrawide.jpg" alt="GTA VI" />
+  
+  </section>
+
 <section class="personaje-lucia">
   <div class="contenedor-lucia-centralizado">
     <div class="bloque-lucia">
@@ -138,6 +146,51 @@ export default function Home({ data }: PageProps<Weather | undefined>) {
     <div class="galeria-lucia-inferior">
       <img src="/Lucia2.jpg" alt="Lucía en moto" />
       <img src="/Lucia3.jpg" alt="Lucía en bar" />
+    </div>
+  </div>
+</section>
+
+
+<section class="cosas-de-leonida">
+  <div class="contenedor-leonida-texto">
+    <h2 class="titulo-leonida">Cosas de Leonida</h2>
+    <p class="descripcion-leonida">
+      Cuando se pone el sol y <br />
+      brillan las luces de neón, <br />
+      todos tienen algo que ganar… <br />
+      y mucho más que perder.
+    </p>
+  </div>
+</section>
+
+
+
+<section class="personaje-cal">
+  <div class="contenedor-cal-centralizado">
+    <div class="bloque-cal">
+      
+
+      {/* Texto a la derecha */}
+      <div class="texto-personaje">
+        <h1 class="titulo-personaje">CAL HAMPTON</h1>
+        <h2 class="frase-personaje-carl">
+          «¿Y si todo lo que dicen en Internet<br /> fuera verdad?»
+        </h2>
+        <p class="descripcion-personaje">
+          Cal, amigo de Jason y socio de Brian, se siente más seguro en casa,
+          espiando las comunicaciones de la guardia costera con unas cervezas y
+          unas cuantas pestañas privadas abiertas en el navegador.
+        </p>
+        <FavoritoButton nombre="Cal" imagen="/Cal1.png" />
+      </div>
+    </div>
+
+    {/* Galería inferior de imágenes */}
+    <div class="galeria-cal-inferior">
+      <img src="/Cal1.png" alt="Cal caminando con Jason" />
+      <img src="/Cal2.png" alt="Cal caminando con Jason" />
+      <img src="/Cal3.png" alt="Cal en mini golf" />
+      <img src="/Cal4.png" alt="Cal mirando un avión" />
     </div>
   </div>
 </section>
